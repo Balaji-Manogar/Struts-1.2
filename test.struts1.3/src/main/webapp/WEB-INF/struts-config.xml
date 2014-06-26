@@ -7,7 +7,7 @@
 		<form-bean name="registerForm" type="org.baali.struts.RegisterForm" />
 	</form-beans>
 	<action-mappings>
-		<action path="/register" type="org.baali.struts.RegisterAction" name="registerForm">
+		<action path="/register" type="org.baali.struts.RegisterAction" name="registerForm" input="error.jsp">
 			<forward name="success" path="/success.html" />
 			<forward name="failure" path="/failure.html" />
 		</action>
