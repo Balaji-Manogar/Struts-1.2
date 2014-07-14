@@ -30,8 +30,11 @@
 				input="/logging/logon.jsp" validate="true">
 			<forward name="welcome" path="/logging/welcome.jsp" />
 			<forward name="loginAgain" path="/logging/logon.jsp" />
-		</action>		
+		</action>
+		<action path="/action-forward" type="org.baali.struts.logon.ActionForwardDemo" input="/index.jsp" name="actionForwardDemo">
+			<forward name="forward" path="/forward" />
+		</action>
 	</action-mappings>
 	
-	<message-resources parameter="resources.application" />
+	<message-resources parameter="resources.application" />	
 </struts-config>
