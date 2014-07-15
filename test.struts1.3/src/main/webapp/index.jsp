@@ -5,6 +5,8 @@
 <c:set var="hello" value="Hello Maven" />
 
 <h2>${hello}..</h2>
-<html:link action="action-forward">Action forward demo</html:link>
+<html:link action="action-forward">Action forward demo</html:link><br />
+<html:link action="action-error">Action messages demo</html:link>
+<html:errors/>
 </body>
 </html>

@@ -7,6 +7,7 @@
 	<form-beans>
 		<form-bean name="registerForm" type="org.baali.struts.RegisterForm" />
 		<form-bean name="logForm" type="org.baali.struts.logon.LogonForm" />
+		<form-bean name="errorsForm" type="org.baali.struts.logon.ActionErrorsForm" />
 	</form-beans>
 	<global-forwards>
 		<forward name="logoff" path="/logoff.do" />
@@ -33,6 +34,9 @@
 		</action>
 		<action path="/action-forward" type="org.baali.struts.logon.ActionForwardDemo" input="/index.jsp" name="actionForwardDemo">
 			<forward name="forward" path="/forward" />
+		</action>
+		<action path="/action-error" type="org.baali.struts.logon.ActionErrorsDemo" name="errorsForm" validate="true" input="/forward/messages.jsp" >
+			
 		</action>
 	</action-mappings>
 	

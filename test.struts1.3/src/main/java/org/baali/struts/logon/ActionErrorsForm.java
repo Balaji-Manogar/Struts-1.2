@@ -2,29 +2,24 @@ package org.baali.struts.logon;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.struts.action.ActionError;
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 
-public class LogonForm extends ActionForm
+public class ActionErrorsForm extends ActionForm
 {
-	private String username = null;
-	private String password = null;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String username;
+	private String password;
 	
-	public ActionErrors validate(ActionMapping mapping, HttpServletRequest req)
+	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request)
 	{
 		ActionErrors errors = new ActionErrors();
-		if(username == null || username.length() < 1)
-		{
-			System.out.println("Validating....");
-			errors.add(this.username, new ActionMessage("error.username.required"));
-		}
-		if(password == null || password.length() < 1)
-		{
-			errors.add(this.password, new ActionMessage("error.password.required"));
-		}
+		errors.add("username",new ActionMessage("error.username"));
 		return errors;
 	}
 	public String getUsername()
@@ -43,4 +38,5 @@ public class LogonForm extends ActionForm
 	{
 		this.password = password;
 	}
+
 }
