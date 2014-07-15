@@ -14,7 +14,7 @@ public class ActionForwardDemo extends Action
 	{
 		ActionForward af = mapping.findForward("forward");
 		String path = af.getPath().toString() + "/forward.jsp?name=Balaji";
-		return new ActionForward(path);
+		return new ActionForward("/forward/forward.jsp");
 	}
 
 }
