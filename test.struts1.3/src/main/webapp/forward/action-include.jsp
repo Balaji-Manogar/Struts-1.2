@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Struts forward action</title>
+<title>Included Jsp page</title>
 </head>
 <body>
-<h1><a href="http://localhost:8080/test.struts1.2/">Home page</a></h1>
-This page is forwarded page from strutsForward action
+<p style="color:maroon;">This page is included from some other page using struts include action</p>
 </body>
 </html>
