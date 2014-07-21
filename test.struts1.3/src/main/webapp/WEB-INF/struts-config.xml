@@ -53,6 +53,9 @@
 		<action path="/action/include-page" type="org.apache.struts.actions.IncludeAction" parameter="/forward/action-include.jsp" />
 		<action path="/action/include" type="org.apache.struts.actions.ForwardAction" parameter="/forward/includeActionDemo.jsp" />
 		
+		<!-- DispatchAction Demo  -->
+		<action path="/action/dispatch" type="org.baali.struts.logon.DispatchActionDemo" parameter="method" />
+		
 	</action-mappings>
 
 	<message-resources parameter="resources.application" />

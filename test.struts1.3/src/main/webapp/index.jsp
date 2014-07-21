@@ -8,7 +8,11 @@
 <html:link action="action-forward">Action forward demo</html:link><br />
 <html:link action="/action/message">Action messages demo</html:link><br />
 <html:link action="/action/forward-action">Struts forward action demo</html:link><br />
-<html:link action="/action/include">Struts include action demo</html:link>
+<html:link action="/action/include">Struts include action demo</html:link><br />
+<html:link action="/action/dispatch?method=create">Struts dispatch action create demo</html:link><br />
+<html:link action="/action/dispatch?method=delete">Struts dispatch action delete demo</html:link><br />
+<html:link action="/action/dispatch?method=update">Struts dispatch action updated demo</html:link>
+
 <html:errors/>
 </body>
 </html>
