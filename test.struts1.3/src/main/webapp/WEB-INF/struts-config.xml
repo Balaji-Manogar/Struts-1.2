@@ -39,6 +39,10 @@
 			
 		</action>
 		<action path="/action/message" type="org.baali.struts.logon.SimpleActionMessageDemo" validate="false" input="/index.jsp" />
+		
+		<!-- Struts Bridged Actions  -->
+		<action path="/action/forward-action" type="org.apache.struts.actions.ForwardAction" 
+			parameter="/forward/struts-forward.jsp" input="/index.jsp"></action>
 	</action-mappings>
 	
 	<message-resources parameter="resources.application" />	

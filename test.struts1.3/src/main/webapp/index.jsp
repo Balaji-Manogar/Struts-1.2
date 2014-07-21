@@ -6,7 +6,8 @@
 <h1><a href="http://localhost:8080/test.struts1.2/">Home page</a></h1>
 <h2>${hello}..</h2>
 <html:link action="action-forward">Action forward demo</html:link><br />
-<html:link action="/action/message">Action messages demo</html:link>
+<html:link action="/action/message">Action messages demo</html:link><br />
+<html:link action="/action/forward-action">Struts forward action demo</html:link>
 <html:errors/>
 </body>
 </html>
