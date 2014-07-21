@@ -35,9 +35,10 @@
 		<action path="/action-forward" type="org.baali.struts.logon.ActionForwardDemo" input="/index.jsp" name="actionForwardDemo">
 			<forward name="forward" path="/forward" />
 		</action>
-		<action path="/action-error" type="org.baali.struts.logon.ActionErrorsDemo" name="errorsForm" validate="true" input="/forward/messages.jsp" >
+		<action path="/action-error" type="org.baali.struts.logon.ActionErrorsDemo" name="errorsForm" validate="false" input="/forward/messages.jsp" >
 			
 		</action>
+		<action path="/action/message" type="org.baali.struts.logon.SimpleActionMessageDemo" validate="false" input="/index.jsp" />
 	</action-mappings>
 	
 	<message-resources parameter="resources.application" />	

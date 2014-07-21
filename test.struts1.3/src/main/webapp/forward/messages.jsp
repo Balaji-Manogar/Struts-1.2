@@ -21,7 +21,7 @@
 			<bean:write name="messages" />
 		</html:messages>
 	</logic:messagesPresent>
-	<logic:messagesPresent message="global.message.nameee" >
+	<logic:messagesPresent name="global.message.name" >
 		My name isggg present!!!
 	</logic:messagesPresent>
 
