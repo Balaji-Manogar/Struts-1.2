@@ -13,8 +13,8 @@
 	<html:form action="logonSubmit" focus="username">
 		username: <html:text property="username" /><br />
 		password: <html:password property="password" redisplay="false"/><br />
-		<html:submit value="Submit" />&nbsp;&nbsp;&nbsp;&nbsp;
-		<html:reset value="Reset" />
+		<html:submit property="step">Submit</html:submit>&nbsp;&nbsp;&nbsp;&nbsp;
+		<html:submit  property="step" >Reset</html:submit>
 	</html:form>
 </body>
 </html>

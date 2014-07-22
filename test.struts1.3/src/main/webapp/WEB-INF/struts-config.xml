@@ -12,7 +12,6 @@
 	<global-forwards>
 		<forward name="logoff" path="/logoff.do" />
 		<forward name="logon" path="/logon.do" />
-		<forward name="welcome" path="/welcome.do" />
 	</global-forwards>
 
 	<action-mappings>
