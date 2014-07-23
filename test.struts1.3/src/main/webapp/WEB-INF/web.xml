@@ -13,9 +13,12 @@
     </servlet-class>
     <init-param>
         <param-name>config</param-name>
-        <param-value>
-         /WEB-INF/struts-config.xml
+        <param-value>/WEB-INF/struts-config.xml
         </param-value>
+    </init-param>
+    <init-param>
+    	<param-name>config/module2</param-name>
+    	<param-value>/WEB-INF/module2.xml</param-value>
     </init-param>
     <init-param>
       <param-name>debug</param-name>
