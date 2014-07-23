@@ -7,6 +7,7 @@
 	<form-beans>
 		<form-bean name="registerForm" type="org.baali.struts.RegisterForm" />
 		<form-bean name="logForm" type="org.baali.struts.logon.LogonForm" />
+		<form-bean name="actionFromForwardForm" type="org.baali.struts.logon.ActionFromForwardForm" />
 		<form-bean name="errorsForm" type="org.baali.struts.logon.ActionErrorsForm" />
 	</form-beans>
 	<global-forwards>
@@ -15,10 +16,8 @@
 	</global-forwards>
 
 	<action-mappings>
-		<action path="/welcome" type="org.apache.struts.actions.ForwardAction"
-			parameter="/logging/welcome.jsp" />
-		<action path="/register" type="org.baali.struts.RegisterAction"
-			name="registerForm" input="error.jsp">
+		<action path="/welcome" type="org.apache.struts.actions.ForwardAction"	parameter="/logging/welcome.jsp" />
+		<action path="/register" type="org.baali.struts.RegisterAction" name="registerForm" input="error.jsp">
 			<forward name="success" path="/success.html" />
 			<forward name="failure" path="/failure.html" />
 		</action>
@@ -57,6 +56,14 @@
 		
 		<!-- LookupDispatchAction Demo  -->
 		<action path="/action/lookup" type="org.baali.struts.logon.LookupDispatchActionDemo" parameter="p" />
+		
+		
+		<action path="/forwardSubmitServlet" name="actionFromForwardForm" type="org.apache.struts.actions.ForwardAction"  parameter="/action/forward-servlet/" />
+		<action path="/forwardSubmitAction" name="actionFromForwardForm" type="org.apache.struts.actions.ForwardAction"  parameter="/action/actionFromForward.do" />
+		 
+		<action path="/action/actionFromForward" type="org.baali.struts.logon.ActionFromForward">
+			<forward name="success" path="/logging/logon.jsp"></forward>
+		</action>
 		
 	</action-mappings>
 

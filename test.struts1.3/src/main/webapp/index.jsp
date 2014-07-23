@@ -14,7 +14,10 @@
 <html:link action="/action/dispatch?method=update">Struts dispatch action updated demo</html:link><br />
 <html:link action="/action/lookup?p=create">Struts lookup dispatch action create demo</html:link><br />
 <html:link action="/action/lookup?p=delete">Struts lookup dispatch action delete demo</html:link><br />
-<html:link action="/action/lookup?p=update">Struts lookup dispatch action updated demo</html:link>
+<html:link action="/action/lookup?p=update">Struts lookup dispatch action updated demo</html:link><br />
+<html:link action="/forwardSubmitServlet">ForwardAction to another Servlet</html:link><br />
+<html:link action="/forwardSubmitAction">ForwardAction to another Action</html:link>
+
 
 <html:errors/>
 </body>
