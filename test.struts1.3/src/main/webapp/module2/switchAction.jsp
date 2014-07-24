@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1><a href="http://localhost:8080/test.struts1.2/">Home page</a></h1>
-<h3>This is switch actio demo....</h3>
+<h3>This is switch action demo....</h3>
 </body>
 </html>
