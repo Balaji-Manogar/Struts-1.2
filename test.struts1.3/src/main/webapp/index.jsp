@@ -18,7 +18,8 @@
 <html:link action="/forwardSubmitServlet">ForwardAction to another Servlet</html:link><br />
 <html:link action="/forwardSubmitAction">ForwardAction to another Action</html:link><br />
 <html:link action="/action/switch-action">SwitchAction module to module action</html:link><br />
-<html:link action="/action/duplicate-logon">Duplicate log on demo</html:link>
+<html:link action="/action/duplicate-logon">Duplicate log on demo</html:link><br />
+<html:link action="/action/validator">Validator plug in demo</html:link>
 
 
 <html:errors/>

@@ -6,6 +6,7 @@
 		<form-bean name="logForm" type="org.baali.struts.logon.LogonForm" />
 		<form-bean name="actionFromForwardForm" type="org.baali.struts.logon.ActionFromForwardForm" />
 		<form-bean name="errorsForm" type="org.baali.struts.logon.ActionErrorsForm" />
+		<form-bean name="validatorForm" type="org.baali.struts.logon.ValidationUserForm" />
 	</form-beans>
 	<global-forwards>
 		<forward name="logoff" path="/logoff.do" />
@@ -14,60 +15,87 @@
 
 	<action-mappings>
 		<action path="/welcome" type="org.apache.struts.actions.ForwardAction" parameter="/logging/welcome.jsp" />
-		<action path="/register" type="org.baali.struts.RegisterAction" name="registerForm" input="error.jsp">
+		<action path="/register" type="org.baali.struts.RegisterAction" name="registerForm"
+			input="error.jsp">
 			<forward name="success" path="/success.html" />
 			<forward name="failure" path="/failure.html" />
 		</action>
-		<action path="/logoff" type="org.baali.struts.logon.LogoffAction" name="logForm" input="/logging/logon.jsp">
+		<action path="/logoff" type="org.baali.struts.logon.LogoffAction" name="logForm"
+			input="/logging/logon.jsp">
 			<forward name="success" path="/logging/welcome.jsp" />
 			<forward name="failure" path="/logging/logon.jsp" />
 		</action>
 		<action path="/logon" type="org.apache.struts.actions.ForwardAction" parameter="/logging/logon.jsp" />
 
-		<action path="/logonSubmit" type="org.baali.struts.logon.LogonAction" name="logForm" input="/logging/logon.jsp" validate="true">
+		<action path="/logonSubmit" type="org.baali.struts.logon.LogonAction" name="logForm"
+			input="/logging/logon.jsp" validate="true">
 			<forward name="welcome" path="/logging/welcome.jsp" />
 			<forward name="loginAgain" path="/logging/logon.jsp" />
 		</action>
-		<action path="/action-forward" type="org.baali.struts.logon.ActionForwardDemo" input="/index.jsp" name="actionForwardDemo">
+		<action path="/action-forward" type="org.baali.struts.logon.ActionForwardDemo"
+			input="/index.jsp" name="actionForwardDemo">
 			<forward name="forward" path="/forward" />
 		</action>
-		<action path="/action-error" type="org.baali.struts.logon.ActionErrorsDemo" name="errorsForm" validate="false" input="/forward/messages.jsp">
+		<action path="/action-error" type="org.baali.struts.logon.ActionErrorsDemo" name="errorsForm"
+			validate="false" input="/forward/messages.jsp">
 
 		</action>
-		<action path="/action/message" type="org.baali.struts.logon.SimpleActionMessageDemo" validate="false" input="/index.jsp" />
+		<action path="/action/message" type="org.baali.struts.logon.SimpleActionMessageDemo"
+			validate="false" input="/index.jsp" />
 
 		<!-- Struts Bridged Actions -->
-		<action path="/action/forward-action" type="org.apache.struts.actions.ForwardAction" parameter="/forward/struts-forward.jsp" input="/index.jsp" />
-		<action path="/action/include-page" type="org.apache.struts.actions.IncludeAction" parameter="/forward/action-include.jsp" />
-		<action path="/action/include" type="org.apache.struts.actions.ForwardAction" parameter="/forward/includeActionDemo.jsp" />
-		
-		<!-- DispatchAction Demo  -->
-		<action path="/action/dispatch" type="org.baali.struts.logon.DispatchActionDemo" parameter="method" />
-		
-		<!-- LookupDispatchAction Demo  -->
-		<action path="/action/lookup" type="org.baali.struts.logon.LookupDispatchActionDemo" parameter="p" />
-		
-		
-		<action path="/forwardSubmitServlet" name="actionFromForwardForm" type="org.apache.struts.actions.ForwardAction" parameter="/action/forward-servlet/" />
-		<action path="/forwardSubmitAction" name="actionFromForwardForm" type="org.apache.struts.actions.ForwardAction" parameter="/action/actionFromForward.do" />
-		 
+		<action path="/action/forward-action" type="org.apache.struts.actions.ForwardAction"
+			parameter="/forward/struts-forward.jsp" input="/index.jsp" />
+		<action path="/action/include-page" type="org.apache.struts.actions.IncludeAction"
+			parameter="/forward/action-include.jsp" />
+		<action path="/action/include" type="org.apache.struts.actions.ForwardAction"
+			parameter="/forward/includeActionDemo.jsp" />
+
+		<!-- DispatchAction Demo -->
+		<action path="/action/dispatch" type="org.baali.struts.logon.DispatchActionDemo"
+			parameter="method" />
+
+		<!-- LookupDispatchAction Demo -->
+		<action path="/action/lookup" type="org.baali.struts.logon.LookupDispatchActionDemo"
+			parameter="p" />
+
+
+		<action path="/forwardSubmitServlet" name="actionFromForwardForm"
+			type="org.apache.struts.actions.ForwardAction" parameter="/action/forward-servlet/" />
+		<action path="/forwardSubmitAction" name="actionFromForwardForm"
+			type="org.apache.struts.actions.ForwardAction" parameter="/action/actionFromForward.do" />
+
 		<action path="/action/actionFromForward" type="org.baali.struts.logon.ActionFromForward">
 			<forward name="success" path="/logging/logon.jsp" />
 		</action>
-		
+
 		<!-- SwitchAction is used to switch action from one config to another config file -->
 		<action path="/switch" type="org.apache.struts.actions.SwitchAction" />
 		<action path="/action/switch-action" type="org.baali.struts.logon.SwitchActionDemo">
 			<forward name="success" path="/switch.do?page=/action/module2.do&amp;prefix=/module2" />
 		</action>
-		
-	<action path="/action/duplicate-logon" type="org.baali.struts.logon.HandleDuplicateLogOn" input="/forward/duplicateForm.jsp">
-		<forward name="success" path="/forward/duplicateForm.jsp" />
-	</action>
-	<action path="/action/detect-duplicate-logon" type="org.baali.struts.logon.DuplicateLogOnIdentifierAction" name="logForm" input="/forward/duplicateForm.jsp">
-		<forward name="duplicate" path="/forward/duplicate.jsp" /><forward name="success" path="/forward/duplicateForm.jsp" redirect="false" />
-	</action>
+
+		<action path="/action/duplicate-logon" type="org.baali.struts.logon.HandleDuplicateLogOn"
+			input="/forward/duplicateForm.jsp">
+			<forward name="success" path="/forward/duplicateForm.jsp" />
+		</action>
+		<action path="/action/detect-duplicate-logon" type="org.baali.struts.logon.DuplicateLogOnIdentifierAction"
+			name="logForm" input="/forward/duplicateForm.jsp">
+			<forward name="duplicate" path="/forward/duplicate.jsp" />
+			<forward name="success" path="/forward/duplicateForm.jsp" redirect="false" />
+		</action>
+		<action path="/action/validator-form" type="org.baali.struts.logon.ValidationUserAction"
+			name="validatorForm" validate="true" input="/forward/validatorForm.jsp">
+			<forward name="success" path="/index.jsp" redirect="false" />
+		</action>
+		<action path="/action/validator" type="org.apache.struts.actions.ForwardAction"
+			parameter="/forward/validatorForm.jsp" />
 	</action-mappings>
 
 	<message-resources parameter="resources.application" />
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml" />
+		
+	</plug-in>
 </struts-config>
