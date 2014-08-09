@@ -7,6 +7,11 @@
 		<form-bean name="actionFromForwardForm" type="org.baali.struts.logon.ActionFromForwardForm" />
 		<form-bean name="errorsForm" type="org.baali.struts.logon.ActionErrorsForm" />
 		<form-bean name="validatorForm" type="org.baali.struts.logon.ValidationUserForm" />
+		
+		<form-bean name="dynaForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+		</form-bean>
 	</form-beans>
 	<global-forwards>
 		<forward name="logoff" path="/logoff.do" />
@@ -90,6 +95,13 @@
 		</action>
 		<action path="/action/validator" type="org.apache.struts.actions.ForwardAction"
 			parameter="/forward/validatorForm.jsp" />
+			
+		<!-- DynaAction Demo -->
+		<action path="/actions/dyna-form" type="org.baali.struts.logon.DynaActionDemo" 
+			validate="true" input="/forward/dynaForm.jsp" name="dynaForm">
+			<forward name="success" path="/index.jsp" />
+		</action>
+		<action path="/dyna-demo" type="org.apache.struts.actions.ForwardAction" parameter="/forward/dynaForm.jsp" />
 	</action-mappings>
 
 	<message-resources parameter="resources.application" />

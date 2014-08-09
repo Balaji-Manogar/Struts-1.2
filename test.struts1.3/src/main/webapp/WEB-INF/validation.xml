@@ -5,10 +5,17 @@
 
 <form-validation>
 	<formset>
+		<form name="dynaForm">
+			<field property="username" depends="required">
+				<arg key="label.username" />
+			</field>
+			<field property="email" depends="required">
+				<arg key="label.email" />
+			</field>
+		</form>
 		<form name="validatorForm">
-			<field property="username" depends="required">				
-				<arg key="label.username"/>
-				
+			<field property="username" depends="required">
+				<arg key="label.username" />
 			</field>
 			<field property="age" depends="required, integer, intRange">
 				<arg0 key="label.age" />
@@ -37,7 +44,7 @@
 				</var>
 			</field>
 			<field property="email" depends="required">
-				<arg key="label.email"/>
+				<arg key="label.email" />
 			</field>
 		</form>
 	</formset>
